@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<robot name="your_robot_name">
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://your_package/meshes/your_model.stl"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://your_package/meshes/your_model.stl"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

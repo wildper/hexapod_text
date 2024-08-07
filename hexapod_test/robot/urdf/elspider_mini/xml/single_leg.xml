@@ -1,0 +1,70 @@
+<mujoco model="single_leg">
+  <compiler angle="radian" meshdir="../meshes/" autolimits="true"/>
+  <option timestep="0.002" apirate="500" integrator="RK4" gravity="0 0 -9.806" solver="Newton" noslip_iterations="0"/>
+
+  <asset>
+    <mesh name="RF_HIP" file="RF_HIP.STL"/>
+    <mesh name="RF_THIGH" file="RF_THIGH.STL"/>
+    <mesh name="RF_SHANK" file="RF_SHANK.STL"/>
+    <mesh name="RF_FOOT" file="RF_FOOT.STL"/>
+  </asset>
+
+  <default>
+    <geom contype="1" conaffinity="1" friction="0.6 0.3 0.3" rgba="0.5 0.6 0.7 1" margin="0.001" group="0"/>
+  </default>
+  <asset>
+    <!-- <texture type="skybox" builtin="gradient" rgb1="0.2 0.2 0.2" rgb2="0.9 0.9 0.9" width="512" height="512"/> -->
+    <texture name="grid" type="2d" builtin="checker" rgb1=".9 .8 .7" rgb2=".4 .4 .4" width="300" height="300" mark="edge" markrgb=".2 .3 .4"/>
+    <!-- <material name="grid" texture="grid" texrepeat="2 2" texuniform="true" reflectance=".2"/> -->
+    <material name="grid" texture="grid" texrepeat="1 1" texuniform="true" />
+  </asset>
+  <visual>
+    <global offwidth="1920" offheight="1080"/>
+    <rgba com="0.502 1.0 0 0.5" contactforce="0.98 0.4 0.4 0.7" contactpoint="1.0 1.0 0.6 0.4"/>
+    <scale com="0.2" forcewidth="0.035" contactwidth="0.10" contactheight="0.04"/>
+  </visual>
+
+  <worldbody>
+    <light directional="true" diffuse=".8 .8 .8" pos="0 0 10" dir="0 0 -10"/>
+    <geom name="ground" type="plane" pos="0 0 0" size="20 20 0.1" material="grid" solimp=".9 .95 .001" solref='-10000 -1000'/>
+
+    <camera name="test" pos="-1.394 -0.905 1.007" xyaxes="0.474 -0.880 0.000 0.397 0.214 0.892"/>
+    <camera name="left" pos="0. 1 0.3" xyaxes="-1. 0. 0. 0. 0. 1."/>
+    <camera name="right" pos="0. -1 0.3" xyaxes="1. 0. 0. 0. 0. 1."/>
+    <camera name="track" mode="trackcom" fovy="45" pos="0.5 -1. 0.35" xyaxes="0.866 0.5 0 0 0 1"/>
+
+    <!-- <body name="RF_HIP" pos="0.42311 -0.2 0.003" quat="-3.67321e-06 0 0 1"> -->
+    <body name="RF_HIP" pos="0 0 0.5" quat="-3.67321e-06 0 0 1">
+      <inertial pos="0 0 0" quat="0.884465 0.459719 0.0735536 -0.0311267" mass="1.432" diaginertia="0.00874465 0.00836423 0.00178828"/>
+      <joint name="RF_HAA" pos="0 0 0" axis="0 0 1" range="-0.94 0.94"/>
+      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="RF_HIP"/>
+      <geom type="mesh" rgba="1 1 1 1" mesh="RF_HIP"/>
+      <body name="RF_THIGH" pos="0 0.15 -0.086603" quat="-2.59734e-06 0.707105 2.59735e-06 0.707108">
+        <inertial pos="0.130351 0 0.00536515" quat="0.701309 -0.0903671 -0.0903671 0.701309" mass="1.088" diaginertia="0.00671689 0.00602451 0.00187415"/>
+        <joint name="RF_HFE" pos="0 0 0" axis="0 0 -1" range="-0.1 3.5"/>
+        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="RF_THIGH"/>
+        <geom type="mesh" rgba="1 1 1 1" mesh="RF_THIGH"/>
+        <body name="RF_SHANK" pos="0.162 0 0" quat="-2.59734e-06 0.707105 0.707108 -2.59735e-06">
+          <inertial pos="8.19758e-05 -0.153794 0.00231183" quat="0.706652 0.0227758 0.0227686 0.706828" mass="0.645" diaginertia="0.0111808 0.0102986 0.00225651"/>
+          <joint name="RF_KFE" pos="0 0 0" axis="0 0 -1" range="-0.436 4.25"/>
+          <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="RF_SHANK"/>
+          <!-- <geom type="mesh" rgba="1 1 1 1" mesh="RF_SHANK"/> -->
+          <geom pos="0 -0.35499 0" quat="1.34924e-11 -3.67321e-06 1 -3.67321e-06" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="RF_FOOT"/>
+          <geom pos="0 -0.35499 0" quat="1.34924e-11 -3.67321e-06 1 -3.67321e-06" type="mesh" rgba="1 1 1 1" mesh="RF_FOOT"/>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <position name="rf_haa_position" kp="25" ctrlrange="-0.94 0.94" joint="RF_HAA"/>
+    <position name="rf_hfe_position" kp="25" ctrlrange="-0.1 3.5" joint="RF_HFE"/>
+    <position name="rf_kfe_position" kp="25" ctrlrange="-0.436 4.25" joint="RF_KFE"/>
+    <velocity name="rf_haa_velocity" kv="2.5" ctrlrange="-21.0 21.0" joint="RF_HAA"/>
+    <velocity name="rf_hfe_velocity" kv="2.5" ctrlrange="-21.0 21.0" joint="RF_HFE"/>
+    <velocity name="rf_kfe_velocity" kv="2.5" ctrlrange="-21.0 21.0" joint="RF_KFE"/>
+    <motor name="rf_haa_motor" ctrlrange="-33.5 33.5" joint="RF_HAA"/>
+    <motor name="rf_hfe_motor" ctrlrange="-33.5 33.5" joint="RF_HFE"/>
+    <motor name="rf_kfe_motor" ctrlrange="-33.5 33.5" joint="RF_KFE"/>
+  </actuator>
+</mujoco>

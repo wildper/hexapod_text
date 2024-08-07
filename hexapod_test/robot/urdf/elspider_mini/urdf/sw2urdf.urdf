@@ -1,0 +1,1408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! ZZLIN_2022.11.15 -->
+<!-- =================================================================================== -->
+<robot
+  name="robot/urdf/elspider_mini">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.00930909659167422 -0.0044043008545412 -0.00356076318615579"
+        rpy="0 0 0" />
+      <mass
+        value="10.154" />
+      <inertia
+        ixx="0.383316503"
+        ixy="0.005624294"
+        ixz="0.000867617"
+        iyy="1.184788202"
+        iyz="-0.000642783"
+        izz="1.510253542" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="RF_HIP">
+    <inertial>
+      <origin
+        xyz="-0.0032447 0.10644 -0.051265"
+        rpy="0 0 0" />
+      <mass
+        value="1.432" />
+      <inertia
+        ixx="0.008667273"
+        ixy="0.000550519"
+        ixz="-0.000437698"
+        iyy="0.003966417"
+        iyz="0.003045718"
+        izz="0.006263477" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/RF_HIP.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/RF_HIP.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RF_HAA"
+    type="revolute">
+    <origin
+      xyz="0.42311 -0.2 0.003"
+      rpy="0 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="RF_HIP" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5"
+      upper="1.5"
+      effort="33.5"
+      velocity="21" />
+  </joint>
+  <link
+    name="RF_THIGH">
+    <inertial>
+      <origin
+        xyz="0.130350535114915 -2.31481500634345E-14 0.00536514725405646"
+        rpy="0 0 0" />
+      <mass
+        value="1.088" />
+      <inertia
+        ixx="0.005757794"
+        ixy="0"
+        ixz="0.001017752"
+        iyy="0.006716892"
+        iyz="0"
+        izz="0.002140865" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/RF_THIGH.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/RF_THIGH.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RF_HFE"
+    type="revolute">
+    <origin
+      xyz="0 0.15 -0.086603"
+      rpy="3.1416 -1.5708 0" />
+    <parent
+      link="RF_HIP" />
+    <child
+      link="RF_THIGH" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="1.2"
+      effort="33.5"
+      velocity="21" />
+  </joint>
+  <link
+    name="RF_SHANK">
+    <inertial>
+      <origin
+        xyz="8.3661968509452E-05 -0.149655490940651 0.00235938386243889"
+        rpy="0 0 0" />
+      <mass
+        value="0.632" />
+      <inertia
+        ixx="0.009725734"
+        ixy="0"
+        ixz="-0.000516644"
+        iyy="0.011177627"
+        iyz="0.000006204"
+        izz="0.001750349" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/RF_SHANK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/RF_SHANK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RF_KFE"
+    type="revolute">
+    <origin
+      xyz="0.162 0 0"
+      rpy="3.1416 0 1.5708" />
+    <parent
+      link="RF_THIGH" />
+    <child
+      link="RF_SHANK" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="1.2"
+      effort="33.5"
+      velocity="21" />
+  </joint>
+  <link
+    name="RF_FOOT">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-17 0 -5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.013" />
+      <inertia
+        ixx="2.423E-06"
+        ixy="0"
+        ixz="0"
+        iyy="3.073E-06"
+        iyz="0"
+        izz="2.423E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/RF_FOOT.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/RF_FOOT.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RF_FIX"
+    type="fixed" dont_collapse="true">
+    <origin
+      xyz="0 -0.35499 0"
+      rpy="3.1416 0 3.1416" />
+    <parent
+      link="RF_SHANK" />
+    <child
+      link="RF_FOOT" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="RM_HIP">
+    <inertial>
+      <origin
+        xyz="-0.00324472967976966 0.106437132673574 -0.0512648461084984"
+        rpy="0 0 0" />
+      <mass
+        value="1.432" />
+      <inertia
+        ixx="0.008667273"
+        ixy="0.000550519"
+        ixz="-0.000437698"
+        iyy="0.003966417"
+        iyz="0.003045718"
+        izz="0.006263477" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/RM_HIP.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/RM_HIP.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RM_HAA"
+    type="revolute">
+    <origin
+      xyz="0 -0.24 0.003"
+      rpy="0 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="RM_HIP" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5"
+      upper="1.5"
+      effort="33.5"
+      velocity="21" />
+  </joint>
+  <link
+    name="RM_THIGH">
+    <inertial>
+      <origin
+        xyz="0.130350535114915 -2.28705943072782E-14 0.00536514725402895"
+        rpy="0 0 0" />
+      <mass
+        value="1.088" />
+      <inertia
+        ixx="0.005757794"
+        ixy="0"
+        ixz="0.001017752"
+        iyy="0.006716892"
+        iyz="0"
+        izz="0.002140865" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/RM_THIGH.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/RM_THIGH.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RM_HFE"
+    type="revolute">
+    <origin
+      xyz="0 0.15 -0.086603"
+      rpy="3.1416 -1.5708 0" />
+    <parent
+      link="RM_HIP" />
+    <child
+      link="RM_THIGH" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="1.2"
+      effort="33.5"
+      velocity="21" />
+  </joint>
+  <link
+    name="RM_SHANK">
+    <inertial>
+      <origin
+        xyz="8.3661968509452E-05 -0.149655490940651 0.0023593838624662"
+        rpy="0 0 0" />
+      <mass
+        value="0.632" />
+      <inertia
+        ixx="0.009725734"
+        ixy="0"
+        ixz="-0.000516644"
+        iyy="0.011177627"
+        iyz="0.000006204"
+        izz="0.001750349" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/RM_SHANK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/RM_SHANK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RM_KFE"
+    type="revolute">
+    <origin
+      xyz="0.162 0 0"
+      rpy="3.1416 0 1.5708" />
+    <parent
+      link="RM_THIGH" />
+    <child
+      link="RM_SHANK" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="1.2"
+      effort="33.5"
+      velocity="21" />
+  </joint>
+  <link
+    name="RM_FOOT">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-17 0 7.43870341677925E-19"
+        rpy="0 0 0" />
+      <mass
+        value="0.013" />
+      <inertia
+        ixx="2.423E-06"
+        ixy="0"
+        ixz="0"
+        iyy="3.073E-06"
+        iyz="0"
+        izz="2.423E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/RM_FOOT.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/RM_FOOT.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RM_FIX"
+    type="fixed" dont_collapse="true">
+    <origin
+      xyz="0 -0.35499 0"
+      rpy="3.1416 0 3.1416" />
+    <parent
+      link="RM_SHANK" />
+    <child
+      link="RM_FOOT" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="RB_HIP">
+    <inertial>
+      <origin
+        xyz="-0.00324472964644312 0.106437132683591 -0.0512648461084984"
+        rpy="0 0 0" />
+      <mass
+        value="1.432" />
+      <inertia
+        ixx="0.008667273"
+        ixy="0.000550519"
+        ixz="-0.000437698"
+        iyy="0.003966417"
+        iyz="0.003045718"
+        izz="0.006263477" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/RB_HIP.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/RB_HIP.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RB_HAA"
+    type="revolute">
+    <origin
+      xyz="-0.42311 -0.2 0.003"
+      rpy="0 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="RB_HIP" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5"
+      upper="1.5"
+      effort="33.5"
+      velocity="21" />
+  </joint>
+  <link
+    name="RB_THIGH">
+    <inertial>
+      <origin
+        xyz="0.130350535114914 1.90736315630602E-12 0.00536514725405607"
+        rpy="0 0 0" />
+      <mass
+        value="1.088" />
+      <inertia
+        ixx="0.005757794"
+        ixy="0"
+        ixz="0.001017752"
+        iyy="0.006716892"
+        iyz="0"
+        izz="0.002140865" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/RB_THIGH.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/RB_THIGH.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RB_HFE"
+    type="revolute">
+    <origin
+      xyz="0 0.15 -0.086603"
+      rpy="3.1416 -1.5708 0" />
+    <parent
+      link="RB_HIP" />
+    <child
+      link="RB_THIGH" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="1.2"
+      effort="33.5"
+      velocity="21" />
+  </joint>
+  <link
+    name="RB_SHANK">
+    <inertial>
+      <origin
+        xyz="8.36619704401853E-05 -0.149655490940652 0.00235938386243884"
+        rpy="0 0 0" />
+      <mass
+        value="0.632" />
+      <inertia
+        ixx="0.009725734"
+        ixy="0"
+        ixz="-0.000516644"
+        iyy="0.011177627"
+        iyz="0.000006204"
+        izz="0.001750349" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/RB_SHANK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/RB_SHANK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RB_KFE"
+    type="revolute">
+    <origin
+      xyz="0.162 0 0"
+      rpy="3.1416 0 1.5708" />
+    <parent
+      link="RB_THIGH" />
+    <child
+      link="RB_SHANK" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="1.2"
+      effort="33.5"
+      velocity="21" />
+  </joint>
+  <link
+    name="RB_FOOT">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-17 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.013" />
+      <inertia
+        ixx="2.423E-06"
+        ixy="0"
+        ixz="0"
+        iyy="3.073E-06"
+        iyz="0"
+        izz="2.423E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/RB_FOOT.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/RB_FOOT.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RB_FIX"
+    type="fixed" dont_collapse="true">
+    <origin
+      xyz="0 -0.35499 0"
+      rpy="3.1416 0 3.1416" />
+    <parent
+      link="RB_SHANK" />
+    <child
+      link="RB_FOOT" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="LF_HIP">
+    <inertial>
+      <origin
+        xyz="-0.00324475748673819 0.10645398713942 0.0512551151796458"
+        rpy="0 0 0" />
+      <mass
+        value="1.432" />
+      <inertia
+        ixx="0.008667273"
+        ixy="-0.000550519"
+        ixz="-0.000437698"
+        iyy="0.003966417"
+        iyz="-0.003045718"
+        izz="0.006263477" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/LF_HIP.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/LF_HIP.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LF_HAA"
+    type="revolute">
+    <origin
+      xyz="0.42311 0.2 0.003"
+      rpy="3.1416 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="LF_HIP" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5"
+      upper="1.5"
+      effort="33.5"
+      velocity="21" />
+  </joint>
+  <link
+    name="LF_THIGH">
+    <inertial>
+      <origin
+        xyz="0.130350535114915 2.2815083156047E-14 -0.00536514721933629"
+        rpy="0 0 0" />
+      <mass
+        value="1.088" />
+      <inertia
+        ixx="0.005757794"
+        ixy="0"
+        ixz="0.001017752"
+        iyy="0.006716892"
+        iyz="0"
+        izz="0.002140865" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/LF_THIGH.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/LF_THIGH.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LF_HFE"
+    type="revolute">
+    <origin
+      xyz="0 0.15 0.086603"
+      rpy="0 1.5708 0" />
+    <parent
+      link="LF_HIP" />
+    <child
+      link="LF_THIGH" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="1.2"
+      effort="33.5"
+      velocity="21" />
+  </joint>
+  <link
+    name="LF_SHANK">
+    <inertial>
+      <origin
+        xyz="-8.36619685747886E-05 -0.149655490940711 -0.00235938389715884"
+        rpy="0 0 0" />
+      <mass
+        value="0.632" />
+      <inertia
+        ixx="0.009725734"
+        ixy="0"
+        ixz="-0.000516644"
+        iyy="0.011177627"
+        iyz="0.000006204"
+        izz="0.001750349" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/LF_SHANK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/LF_SHANK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LF_KFE"
+    type="revolute">
+    <origin
+      xyz="0.162 0 0"
+      rpy="3.1416 0 1.5708" />
+    <parent
+      link="LF_THIGH" />
+    <child
+      link="LF_SHANK" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="1.2"
+      effort="33.5"
+      velocity="21" />
+  </joint>
+  <link
+    name="LF_FOOT">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.013" />
+      <inertia
+        ixx="2.423E-06"
+        ixy="0"
+        ixz="0"
+        iyy="3.073E-06"
+        iyz="0"
+        izz="2.423E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/LF_FOOT.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/LF_FOOT.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LF_FIX"
+    type="fixed" dont_collapse="true">
+    <origin
+      xyz="0 -0.354986717718789 0"
+      rpy="0 0 0" />
+    <parent
+      link="LF_SHANK" />
+    <child
+      link="LF_FOOT" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="LM_HIP">
+    <inertial>
+      <origin
+        xyz="-0.00324475753590289 0.106453987137922 0.0512551151796458"
+        rpy="0 0 0" />
+      <mass
+        value="1.432" />
+      <inertia
+        ixx="0.008667273"
+        ixy="-0.000550519"
+        ixz="-0.000437698"
+        iyy="0.003966417"
+        iyz="-0.003045718"
+        izz="0.006263477" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/LM_HIP.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/LM_HIP.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LM_HAA"
+    type="revolute">
+    <origin
+      xyz="0 0.24 0.003"
+      rpy="3.1416 0 -3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="LM_HIP" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5"
+      upper="1.5"
+      effort="33.5"
+      velocity="21" />
+  </joint>
+  <link
+    name="LM_THIGH">
+    <inertial>
+      <origin
+        xyz="0.130350535114915 5.28382892994728E-12 -0.00536514723660203"
+        rpy="0 0 0" />
+      <mass
+        value="1.088" />
+      <inertia
+        ixx="0.005757794"
+        ixy="0"
+        ixz="0.001017752"
+        iyy="0.006716892"
+        iyz="0"
+        izz="0.002140865" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/LM_THIGH.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/LM_THIGH.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LM_HFE"
+    type="revolute">
+    <origin
+      xyz="0 0.15 0.086603"
+      rpy="0 1.5708 0" />
+    <parent
+      link="LM_HIP" />
+    <child
+      link="LM_THIGH" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="1.2"
+      effort="33.5"
+      velocity="21" />
+  </joint>
+  <link
+    name="LM_SHANK">
+    <inertial>
+      <origin
+        xyz="-8.36619623776902E-05 -0.149655490940596 -0.00235938387990302"
+        rpy="0 0 0" />
+      <mass
+        value="0.632" />
+      <inertia
+        ixx="0.009725734"
+        ixy="0"
+        ixz="-0.000516644"
+        iyy="0.011177627"
+        iyz="0.000006204"
+        izz="0.001750349" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/LM_SHANK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/LM_SHANK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LM_KFE"
+    type="revolute">
+    <origin
+      xyz="0.162 0 0"
+      rpy="3.1416 0 1.5708" />
+    <parent
+      link="LM_THIGH" />
+    <child
+      link="LM_SHANK" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="1.2"
+      effort="33.5"
+      velocity="21" />
+  </joint>
+  <link
+    name="LM_FOOT">
+    <inertial>
+      <origin
+        xyz="0 5.55111512312578E-17 -1.42007968785475E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.013" />
+      <inertia
+        ixx="2.423E-06"
+        ixy="0"
+        ixz="0"
+        iyy="3.073E-06"
+        iyz="0"
+        izz="2.423E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/LM_FOOT.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/LM_FOOT.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LM_FIX"
+    type="fixed" dont_collapse="true">
+    <origin
+      xyz="0 -0.35499 0"
+      rpy="0 0 0" />
+    <parent
+      link="LM_SHANK" />
+    <child
+      link="LM_FOOT" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="LB_HIP">
+    <inertial>
+      <origin
+        xyz="-0.00324475752349396 0.106453987138299 0.0512551151796457"
+        rpy="0 0 0" />
+      <mass
+        value="1.432" />
+      <inertia
+        ixx="0.008667273"
+        ixy="-0.000550519"
+        ixz="-0.000437698"
+        iyy="0.003966417"
+        iyz="-0.003045718"
+        izz="0.006263477" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/LB_HIP.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/LB_HIP.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LB_HAA"
+    type="revolute">
+    <origin
+      xyz="-0.42311 0.2 0.003"
+      rpy="3.1416 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="LB_HIP" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5"
+      upper="1.5"
+      effort="33.5"
+      velocity="21" />
+  </joint>
+  <link
+    name="LB_THIGH">
+    <inertial>
+      <origin
+        xyz="0.130350535114915 -1.81332726612027E-12 -0.00536514721914527"
+        rpy="0 0 0" />
+      <mass
+        value="1.088" />
+      <inertia
+        ixx="0.005757794"
+        ixy="0"
+        ixz="0.001017752"
+        iyy="0.006716892"
+        iyz="0"
+        izz="0.002140865" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/LB_THIGH.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/LB_THIGH.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LB_HFE"
+    type="revolute">
+    <origin
+      xyz="0 0.15 0.086603"
+      rpy="0 1.5708 0" />
+    <parent
+      link="LB_HIP" />
+    <child
+      link="LB_THIGH" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="1.2"
+      effort="33.5"
+      velocity="21" />
+  </joint>
+  <link
+    name="LB_SHANK">
+    <inertial>
+      <origin
+        xyz="-8.3661970411042E-05 -0.149655490940711 -0.00235938389735013"
+        rpy="0 0 0" />
+      <mass
+        value="0.632" />
+      <inertia
+        ixx="0.009725734"
+        ixy="0"
+        ixz="-0.000516644"
+        iyy="0.011177627"
+        iyz="0.000006204"
+        izz="0.001750349" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/LB_SHANK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/LB_SHANK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LB_KFE"
+    type="revolute">
+    <origin
+      xyz="0.162 0 0"
+      rpy="3.1416 0 1.5708" />
+    <parent
+      link="LB_THIGH" />
+    <child
+      link="LB_SHANK" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="1.2"
+      effort="33.5"
+      velocity="21" />
+  </joint>
+  <link
+    name="LB_FOOT">
+    <inertial>
+      <origin
+        xyz="0 0 5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.013" />
+      <inertia
+        ixx="2.423E-06"
+        ixy="0"
+        ixz="0"
+        iyy="3.073E-06"
+        iyz="0"
+        izz="2.423E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/LB_FOOT.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/wp/test_ros/src/hexapod_test/robot/urdf/elspider_mini/meshes/LB_FOOT.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LB_FIX"
+    type="fixed" dont_collapse="true">
+    <origin
+      xyz="0 -0.35499 0"
+      rpy="0 0 0" />
+    <parent
+      link="LB_SHANK" />
+    <child
+      link="LB_FOOT" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

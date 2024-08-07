@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! ZZLIN_2022.11.15 -->
+<!-- =================================================================================== -->
+<robot name="single_leg">
+    <mujoco>
+        <compiler meshdir="package://robot/urdf/elspider_mini/meshes" balanceinertia="true" discardvisual="false" />
+    </mujoco>
+
+    <link name="world" />
+
+    <link name="RF_HIP">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1.432" />
+            <inertia ixx="0.008667273" ixy="0.000550519" ixz="-0.000437698"
+                     iyy="0.003966417" iyz="0.003045718"
+                     izz="0.006263477" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://robot/urdf/elspider_mini/meshes/RF_HIP.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="1 1 1 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://robot/urdf/elspider_mini/meshes/RF_HIP.STL" />
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="RF_HAA" type="revolute">
+        <origin xyz="0 0 0" rpy="0 0 3.1416" />
+        <parent link="world" />
+        <child link="RF_HIP" />
+        <axis xyz="0 0 1" />
+        <limit lower="-0.94" upper="0.94" effort="33.5" velocity="21" />
+    </joint>
+
+    <link name="RF_THIGH">
+        <inertial>
+            <origin
+                xyz="0.130350535114915 -2.31481500634345E-14 0.00536514725405646"
+                rpy="0 0 0" />
+            <mass value="1.088" />
+            <inertia ixx="0.005757794" ixy="0" ixz="0.001017752"
+                     iyy="0.006716892" iyz="0"
+                     izz="0.002140865" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://robot/urdf/elspider_mini/meshes/RF_THIGH.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="1 1 1 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://robot/urdf/elspider_mini/meshes/RF_THIGH.STL" />
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="RF_HFE" type="revolute">
+        <origin xyz="0 0.15 -0.086603" rpy="3.1416 -1.5708 0" />
+        <parent link="RF_HIP" />
+        <child link="RF_THIGH" />
+        <axis xyz="0 0 -1" />
+        <limit lower="-0.1" upper="3.5" effort="33.5" velocity="21" />
+    </joint>
+
+    <link name="RF_SHANK">
+        <inertial>
+            <origin
+                xyz="8.3661968509452E-05 -0.149655490940651 0.00235938386243889"
+                rpy="0 0 0" />
+            <mass value="0.632" />
+            <inertia ixx="0.009725734" ixy="0" ixz="-0.000516644"
+                     iyy="0.011177627" iyz="0.000006204"
+                     izz="0.001750349" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://robot/urdf/elspider_mini/meshes/RF_SHANK.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="1 1 1 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://robot/urdf/elspider_mini/meshes/RF_SHANK.STL" />
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="RF_KFE" type="revolute">
+        <origin xyz="0.162 0 0" rpy="3.1416 0 1.5708" />
+        <parent link="RF_THIGH" />
+        <child link="RF_SHANK" />
+        <axis xyz="0 0 -1" />
+        <limit lower="-0.436" upper="4.25" effort="33.5" velocity="21" />
+    </joint>
+
+    <link name="RF_FOOT">
+        <inertial>
+            <origin
+                xyz="5.55111512312578E-17 0 -5.55111512312578E-17"
+                rpy="0 0 0" />
+            <mass value="0.013" />
+            <inertia ixx="2.423E-06" ixy="0" ixz="0"
+                     iyy="3.073E-06" iyz="0"
+                     izz="2.423E-06" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://robot/urdf/elspider_mini/meshes/RF_FOOT.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="1 1 1 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://robot/urdf/elspider_mini/meshes/RF_FOOT.STL" />
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="RF_FIX" type="fixed" dont_collapse="true">
+        <origin xyz="0 -0.35499 0" rpy="3.1416 0 3.1416" />
+        <parent link="RF_SHANK" />
+        <child link="RF_FOOT" />
+        <axis xyz="0 0 0" />
+    </joint>
+</robot>

@@ -1,0 +1,1279 @@
+<sdf version='1.7'>
+  <model name='elspider_mini'>
+    <link name='base'>
+      <inertial>
+        <pose>0.009309 -0.004404 -0.003561 0 -0 0</pose>
+        <mass>10.154</mass>
+        <inertia>
+          <ixx>0.383317</ixx>
+          <ixy>0.00562429</ixy>
+          <ixz>0.000867617</ixz>
+          <iyy>1.18479</iyy>
+          <iyz>-0.000642783</iyz>
+          <izz>1.51025</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.001 0.001 0.001</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name='base_link_visual_1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='LB_HAA' type='revolute'>
+      <pose relative_to='base'>-0.42311 0.2 0.003 -3.14159 -0 -3.14159</pose>
+      <parent>base</parent>
+      <child>LB_HIP</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.94</lower>
+          <upper>0.94</upper>
+          <effort>33.5</effort>
+          <velocity>21</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='LB_HIP'>
+      <pose relative_to='LB_HAA'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.003245 0.10644 0.051265 0 -0 0</pose>
+        <mass>1.432</mass>
+        <inertia>
+          <ixx>0.00866727</ixx>
+          <ixy>-0.000550519</ixy>
+          <ixz>-0.000437698</ixz>
+          <iyy>0.00396642</iyy>
+          <iyz>-0.00304572</iyz>
+          <izz>0.00626348</izz>
+        </inertia>
+      </inertial>
+      <collision name='LB_HIP_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/LB_HIP.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='LB_HIP_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/LB_HIP.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='LB_HFE' type='revolute'>
+      <pose relative_to='LB_HIP'>0 0.15 0.086603 3.14159 1.57079 3.14159</pose>
+      <parent>LB_HIP</parent>
+      <child>LB_THIGH</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.1</lower>
+          <upper>3.5</upper>
+          <effort>33.5</effort>
+          <velocity>21</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='LB_THIGH'>
+      <pose relative_to='LB_HFE'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.130351 0 -0.005365 0 -0 0</pose>
+        <mass>1.088</mass>
+        <inertia>
+          <ixx>0.00575779</ixx>
+          <ixy>0</ixy>
+          <ixz>0.00101775</ixz>
+          <iyy>0.00671689</iyy>
+          <iyz>0</iyz>
+          <izz>0.00214087</izz>
+        </inertia>
+      </inertial>
+      <collision name='LB_THIGH_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/LB_THIGH.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='LB_THIGH_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/LB_THIGH.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='LB_KFE' type='revolute'>
+      <pose relative_to='LB_THIGH'>0.162 0 0 -3.14159 -0 1.5708</pose>
+      <parent>LB_THIGH</parent>
+      <child>LB_SHANK</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.436</lower>
+          <upper>4.25</upper>
+          <effort>33.5</effort>
+          <velocity>21</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='LB_SHANK'>
+      <pose relative_to='LB_KFE'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-8.2e-05 -0.153794 -0.002312 0 -0 0</pose>
+        <mass>0.645</mass>
+        <inertia>
+          <ixx>0.0102653</ixx>
+          <ixy>2.18822e-07</ixy>
+          <ixz>-0.000516647</ixz>
+          <iyy>0.0111808</iyy>
+          <iyz>1.23751e-05</iyz>
+          <izz>0.00228983</izz>
+        </inertia>
+      </inertial>
+      <collision name='LB_SHANK_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/LB_SHANK.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='LB_SHANK_fixed_joint_lump__LB_FOOT_collision_1'>
+        <pose>0 -0.35499 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/LB_FOOT.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='LB_SHANK_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/LB_SHANK.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='LB_SHANK_fixed_joint_lump__LB_FOOT_visual_1'>
+        <pose>0 -0.35499 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/LB_FOOT.STL</uri>
+          </mesh>
+        </geometry>
+        <plugin name='drawForcePlugin' filename='libunitreeDrawForcePlugin.so'>
+          <topicName>LB_foot_contact</topicName>
+        </plugin>
+      </visual>
+      <sensor name='LB_foot_contact' type='contact'>
+        <update_rate>100</update_rate>
+        <plugin name='contactPlugin' filename='libunitreeFootContactPlugin.so'/>
+        <contact>
+          <collision>LB_foot_collision_collision</collision>
+          <topic>__default_topic__</topic>
+        </contact>
+        <alwaysOn>1</alwaysOn>
+      </sensor>
+    </link>
+    <joint name='LF_HAA' type='revolute'>
+      <pose relative_to='base'>0.42311 0.2 0.003 -3.14159 -0 -3.14159</pose>
+      <parent>base</parent>
+      <child>LF_HIP</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.94</lower>
+          <upper>0.94</upper>
+          <effort>33.5</effort>
+          <velocity>21</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='LF_HIP'>
+      <pose relative_to='LF_HAA'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.003245 0.10644 0.051265 0 -0 0</pose>
+        <mass>1.432</mass>
+        <inertia>
+          <ixx>0.00866727</ixx>
+          <ixy>-0.000550519</ixy>
+          <ixz>-0.000437698</ixz>
+          <iyy>0.00396642</iyy>
+          <iyz>-0.00304572</iyz>
+          <izz>0.00626348</izz>
+        </inertia>
+      </inertial>
+      <collision name='LF_HIP_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/LF_HIP.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='LF_HIP_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/LF_HIP.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='LF_HFE' type='revolute'>
+      <pose relative_to='LF_HIP'>0 0.15 0.086603 3.14159 1.57079 3.14159</pose>
+      <parent>LF_HIP</parent>
+      <child>LF_THIGH</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.1</lower>
+          <upper>3.5</upper>
+          <effort>33.5</effort>
+          <velocity>21</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='LF_THIGH'>
+      <pose relative_to='LF_HFE'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.130351 0 -0.005365 0 -0 0</pose>
+        <mass>1.088</mass>
+        <inertia>
+          <ixx>0.00575779</ixx>
+          <ixy>0</ixy>
+          <ixz>0.00101775</ixz>
+          <iyy>0.00671689</iyy>
+          <iyz>0</iyz>
+          <izz>0.00214087</izz>
+        </inertia>
+      </inertial>
+      <collision name='LF_THIGH_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/LF_THIGH.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='LF_THIGH_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/LF_THIGH.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='LF_KFE' type='revolute'>
+      <pose relative_to='LF_THIGH'>0.162 0 0 -3.14159 -0 1.5708</pose>
+      <parent>LF_THIGH</parent>
+      <child>LF_SHANK</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.436</lower>
+          <upper>4.25</upper>
+          <effort>33.5</effort>
+          <velocity>21</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='LF_SHANK'>
+      <pose relative_to='LF_KFE'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-8.2e-05 -0.153794 -0.002312 0 -0 0</pose>
+        <mass>0.645</mass>
+        <inertia>
+          <ixx>0.0102653</ixx>
+          <ixy>2.18822e-07</ixy>
+          <ixz>-0.000516647</ixz>
+          <iyy>0.0111808</iyy>
+          <iyz>1.23751e-05</iyz>
+          <izz>0.00228983</izz>
+        </inertia>
+      </inertial>
+      <collision name='LF_SHANK_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/LF_SHANK.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='LF_SHANK_fixed_joint_lump__LF_FOOT_collision_1'>
+        <pose>0 -0.35499 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/LF_FOOT.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='LF_SHANK_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/LF_SHANK.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='LF_SHANK_fixed_joint_lump__LF_FOOT_visual_1'>
+        <pose>0 -0.35499 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/LF_FOOT.STL</uri>
+          </mesh>
+        </geometry>
+        <plugin name='drawForcePlugin' filename='libunitreeDrawForcePlugin.so'>
+          <topicName>LF_foot_contact</topicName>
+        </plugin>
+      </visual>
+      <sensor name='LF_foot_contact' type='contact'>
+        <update_rate>100</update_rate>
+        <plugin name='contactPlugin' filename='libunitreeFootContactPlugin.so'/>
+        <contact>
+          <collision>LF_foot_collision_collision</collision>
+          <topic>__default_topic__</topic>
+        </contact>
+        <alwaysOn>1</alwaysOn>
+      </sensor>
+    </link>
+    <joint name='LM_HAA' type='revolute'>
+      <pose relative_to='base'>0 0.24 0.003 -3.14159 -0 3.14159</pose>
+      <parent>base</parent>
+      <child>LM_HIP</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.94</lower>
+          <upper>0.94</upper>
+          <effort>33.5</effort>
+          <velocity>21</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='LM_HIP'>
+      <pose relative_to='LM_HAA'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.003245 0.10644 0.051265 0 -0 0</pose>
+        <mass>1.432</mass>
+        <inertia>
+          <ixx>0.00866727</ixx>
+          <ixy>-0.000550519</ixy>
+          <ixz>-0.000437698</ixz>
+          <iyy>0.00396642</iyy>
+          <iyz>-0.00304572</iyz>
+          <izz>0.00626348</izz>
+        </inertia>
+      </inertial>
+      <collision name='LM_HIP_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/LM_HIP.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='LM_HIP_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/LM_HIP.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='LM_HFE' type='revolute'>
+      <pose relative_to='LM_HIP'>0 0.15 0.086603 3.14159 1.57079 3.14159</pose>
+      <parent>LM_HIP</parent>
+      <child>LM_THIGH</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.1</lower>
+          <upper>3.5</upper>
+          <effort>33.5</effort>
+          <velocity>21</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='LM_THIGH'>
+      <pose relative_to='LM_HFE'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.130351 0 -0.005365 0 -0 0</pose>
+        <mass>1.088</mass>
+        <inertia>
+          <ixx>0.00575779</ixx>
+          <ixy>0</ixy>
+          <ixz>0.00101775</ixz>
+          <iyy>0.00671689</iyy>
+          <iyz>0</iyz>
+          <izz>0.00214087</izz>
+        </inertia>
+      </inertial>
+      <collision name='LM_THIGH_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/LM_THIGH.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='LM_THIGH_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/LM_THIGH.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='LM_KFE' type='revolute'>
+      <pose relative_to='LM_THIGH'>0.162 0 0 -3.14159 -0 1.5708</pose>
+      <parent>LM_THIGH</parent>
+      <child>LM_SHANK</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.436</lower>
+          <upper>4.25</upper>
+          <effort>33.5</effort>
+          <velocity>21</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='LM_SHANK'>
+      <pose relative_to='LM_KFE'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-8.2e-05 -0.153794 -0.002312 0 -0 0</pose>
+        <mass>0.645</mass>
+        <inertia>
+          <ixx>0.0102653</ixx>
+          <ixy>2.18822e-07</ixy>
+          <ixz>-0.000516647</ixz>
+          <iyy>0.0111808</iyy>
+          <iyz>1.23751e-05</iyz>
+          <izz>0.00228983</izz>
+        </inertia>
+      </inertial>
+      <collision name='LM_SHANK_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/LM_SHANK.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='LM_SHANK_fixed_joint_lump__LM_FOOT_collision_1'>
+        <pose>0 -0.35499 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/LM_FOOT.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='LM_SHANK_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/LM_SHANK.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='LM_SHANK_fixed_joint_lump__LM_FOOT_visual_1'>
+        <pose>0 -0.35499 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/LM_FOOT.STL</uri>
+          </mesh>
+        </geometry>
+        <plugin name='drawForcePlugin' filename='libunitreeDrawForcePlugin.so'>
+          <topicName>LM_foot_contact</topicName>
+        </plugin>
+      </visual>
+      <sensor name='LM_foot_contact' type='contact'>
+        <update_rate>100</update_rate>
+        <plugin name='contactPlugin' filename='libunitreeFootContactPlugin.so'/>
+        <contact>
+          <collision>LM_foot_collision_collision</collision>
+          <topic>__default_topic__</topic>
+        </contact>
+        <alwaysOn>1</alwaysOn>
+      </sensor>
+    </link>
+    <joint name='RB_HAA' type='revolute'>
+      <pose relative_to='base'>-0.42311 -0.2 0.003 0 0 -3.14159</pose>
+      <parent>base</parent>
+      <child>RB_HIP</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.94</lower>
+          <upper>0.94</upper>
+          <effort>33.5</effort>
+          <velocity>21</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='RB_HIP'>
+      <pose relative_to='RB_HAA'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.003245 0.10644 -0.051265 0 -0 0</pose>
+        <mass>1.432</mass>
+        <inertia>
+          <ixx>0.00866727</ixx>
+          <ixy>0.000550519</ixy>
+          <ixz>-0.000437698</ixz>
+          <iyy>0.00396642</iyy>
+          <iyz>0.00304572</iyz>
+          <izz>0.00626348</izz>
+        </inertia>
+      </inertial>
+      <collision name='RB_HIP_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/RB_HIP.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='RB_HIP_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/RB_HIP.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='RB_HFE' type='revolute'>
+      <pose relative_to='RB_HIP'>0 0.15 -0.086603 7e-06 -1.57079 -3.14159</pose>
+      <parent>RB_HIP</parent>
+      <child>RB_THIGH</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-0.1</lower>
+          <upper>3.5</upper>
+          <effort>33.5</effort>
+          <velocity>21</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='RB_THIGH'>
+      <pose relative_to='RB_HFE'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.130351 0 0.005365 0 -0 0</pose>
+        <mass>1.088</mass>
+        <inertia>
+          <ixx>0.00575779</ixx>
+          <ixy>0</ixy>
+          <ixz>0.00101775</ixz>
+          <iyy>0.00671689</iyy>
+          <iyz>0</iyz>
+          <izz>0.00214087</izz>
+        </inertia>
+      </inertial>
+      <collision name='RB_THIGH_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/RB_THIGH.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='RB_THIGH_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/RB_THIGH.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='RB_KFE' type='revolute'>
+      <pose relative_to='RB_THIGH'>0.162 0 0 -3.14159 -0 1.5708</pose>
+      <parent>RB_THIGH</parent>
+      <child>RB_SHANK</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-0.436</lower>
+          <upper>4.25</upper>
+          <effort>33.5</effort>
+          <velocity>21</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='RB_SHANK'>
+      <pose relative_to='RB_KFE'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>8.2e-05 -0.153794 0.002312 0 -0 0</pose>
+        <mass>0.645</mass>
+        <inertia>
+          <ixx>0.0102653</ixx>
+          <ixy>-2.18827e-07</ixy>
+          <ixz>-0.000516647</ixz>
+          <iyy>0.0111808</iyy>
+          <iyz>3.2914e-08</iyz>
+          <izz>0.00228983</izz>
+        </inertia>
+      </inertial>
+      <collision name='RB_SHANK_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/RB_SHANK.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='RB_SHANK_fixed_joint_lump__RB_FOOT_collision_1'>
+        <pose>0 -0.35499 0 -3.14159 -0 -3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/RB_FOOT.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='RB_SHANK_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/RB_SHANK.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='RB_SHANK_fixed_joint_lump__RB_FOOT_visual_1'>
+        <pose>0 -0.35499 0 -3.14159 -0 -3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/RB_FOOT.STL</uri>
+          </mesh>
+        </geometry>
+        <plugin name='drawForcePlugin' filename='libunitreeDrawForcePlugin.so'>
+          <topicName>RB_foot_contact</topicName>
+        </plugin>
+      </visual>
+      <sensor name='RB_foot_contact' type='contact'>
+        <update_rate>100</update_rate>
+        <plugin name='contactPlugin' filename='libunitreeFootContactPlugin.so'/>
+        <contact>
+          <collision>RB_foot_collision_collision</collision>
+          <topic>__default_topic__</topic>
+        </contact>
+        <alwaysOn>1</alwaysOn>
+      </sensor>
+    </link>
+    <joint name='RF_HAA' type='revolute'>
+      <pose relative_to='base'>0.42311 -0.2 0.003 0 0 -3.14159</pose>
+      <parent>base</parent>
+      <child>RF_HIP</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.94</lower>
+          <upper>0.94</upper>
+          <effort>33.5</effort>
+          <velocity>21</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='RF_HIP'>
+      <pose relative_to='RF_HAA'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.003245 0.10644 -0.051265 0 -0 0</pose>
+        <mass>1.432</mass>
+        <inertia>
+          <ixx>0.00866727</ixx>
+          <ixy>0.000550519</ixy>
+          <ixz>-0.000437698</ixz>
+          <iyy>0.00396642</iyy>
+          <iyz>0.00304572</iyz>
+          <izz>0.00626348</izz>
+        </inertia>
+      </inertial>
+      <collision name='RF_HIP_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/RF_HIP.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='RF_HIP_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/RF_HIP.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='RF_HFE' type='revolute'>
+      <pose relative_to='RF_HIP'>0 0.15 -0.086603 7e-06 -1.57079 -3.14159</pose>
+      <parent>RF_HIP</parent>
+      <child>RF_THIGH</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-0.1</lower>
+          <upper>3.5</upper>
+          <effort>33.5</effort>
+          <velocity>21</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='RF_THIGH'>
+      <pose relative_to='RF_HFE'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.130351 0 0.005365 0 -0 0</pose>
+        <mass>1.088</mass>
+        <inertia>
+          <ixx>0.00575779</ixx>
+          <ixy>0</ixy>
+          <ixz>0.00101775</ixz>
+          <iyy>0.00671689</iyy>
+          <iyz>0</iyz>
+          <izz>0.00214087</izz>
+        </inertia>
+      </inertial>
+      <collision name='RF_THIGH_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/RF_THIGH.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='RF_THIGH_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/RF_THIGH.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='RF_KFE' type='revolute'>
+      <pose relative_to='RF_THIGH'>0.162 0 0 -3.14159 -0 1.5708</pose>
+      <parent>RF_THIGH</parent>
+      <child>RF_SHANK</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-0.436</lower>
+          <upper>4.25</upper>
+          <effort>33.5</effort>
+          <velocity>21</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='RF_SHANK'>
+      <pose relative_to='RF_KFE'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>8.2e-05 -0.153794 0.002312 0 -0 0</pose>
+        <mass>0.645</mass>
+        <inertia>
+          <ixx>0.0102653</ixx>
+          <ixy>-2.18827e-07</ixy>
+          <ixz>-0.000516647</ixz>
+          <iyy>0.0111808</iyy>
+          <iyz>3.2914e-08</iyz>
+          <izz>0.00228983</izz>
+        </inertia>
+      </inertial>
+      <collision name='RF_SHANK_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/RF_SHANK.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='RF_SHANK_fixed_joint_lump__RF_FOOT_collision_1'>
+        <pose>0 -0.35499 0 -3.14159 -0 -3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/RF_FOOT.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='RF_SHANK_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/RF_SHANK.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='RF_SHANK_fixed_joint_lump__RF_FOOT_visual_1'>
+        <pose>0 -0.35499 0 -3.14159 -0 -3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/RF_FOOT.STL</uri>
+          </mesh>
+        </geometry>
+        <plugin name='drawForcePlugin' filename='libunitreeDrawForcePlugin.so'>
+          <topicName>RF_foot_contact</topicName>
+        </plugin>
+      </visual>
+      <sensor name='RF_foot_contact' type='contact'>
+        <update_rate>100</update_rate>
+        <plugin name='contactPlugin' filename='libunitreeFootContactPlugin.so'/>
+        <contact>
+          <collision>RF_foot_collision_collision</collision>
+          <topic>__default_topic__</topic>
+        </contact>
+        <alwaysOn>1</alwaysOn>
+      </sensor>
+    </link>
+    <joint name='RM_HAA' type='revolute'>
+      <pose relative_to='base'>0 -0.24 0.003 0 0 -3.14159</pose>
+      <parent>base</parent>
+      <child>RM_HIP</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.94</lower>
+          <upper>0.94</upper>
+          <effort>33.5</effort>
+          <velocity>21</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='RM_HIP'>
+      <pose relative_to='RM_HAA'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.003245 0.10644 -0.051265 0 -0 0</pose>
+        <mass>1.432</mass>
+        <inertia>
+          <ixx>0.00866727</ixx>
+          <ixy>0.000550519</ixy>
+          <ixz>-0.000437698</ixz>
+          <iyy>0.00396642</iyy>
+          <iyz>0.00304572</iyz>
+          <izz>0.00626348</izz>
+        </inertia>
+      </inertial>
+      <collision name='RM_HIP_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/RM_HIP.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='RM_HIP_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/RM_HIP.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='RM_HFE' type='revolute'>
+      <pose relative_to='RM_HIP'>0 0.15 -0.086603 7e-06 -1.57079 -3.14159</pose>
+      <parent>RM_HIP</parent>
+      <child>RM_THIGH</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-0.1</lower>
+          <upper>3.5</upper>
+          <effort>33.5</effort>
+          <velocity>21</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='RM_THIGH'>
+      <pose relative_to='RM_HFE'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.130351 0 0.005365 0 -0 0</pose>
+        <mass>1.088</mass>
+        <inertia>
+          <ixx>0.00575779</ixx>
+          <ixy>0</ixy>
+          <ixz>0.00101775</ixz>
+          <iyy>0.00671689</iyy>
+          <iyz>0</iyz>
+          <izz>0.00214087</izz>
+        </inertia>
+      </inertial>
+      <collision name='RM_THIGH_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/RM_THIGH.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='RM_THIGH_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/RM_THIGH.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='RM_KFE' type='revolute'>
+      <pose relative_to='RM_THIGH'>0.162 0 0 -3.14159 -0 1.5708</pose>
+      <parent>RM_THIGH</parent>
+      <child>RM_SHANK</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-0.436</lower>
+          <upper>4.25</upper>
+          <effort>33.5</effort>
+          <velocity>21</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='RM_SHANK'>
+      <pose relative_to='RM_KFE'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>8.2e-05 -0.153794 0.002312 0 -0 0</pose>
+        <mass>0.645</mass>
+        <inertia>
+          <ixx>0.0102653</ixx>
+          <ixy>-2.18827e-07</ixy>
+          <ixz>-0.000516647</ixz>
+          <iyy>0.0111808</iyy>
+          <iyz>3.2914e-08</iyz>
+          <izz>0.00228983</izz>
+        </inertia>
+      </inertial>
+      <collision name='RM_SHANK_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/RM_SHANK.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='RM_SHANK_fixed_joint_lump__RM_FOOT_collision_1'>
+        <pose>0 -0.35499 0 -3.14159 -0 -3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/RM_FOOT.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='RM_SHANK_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/RM_SHANK.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='RM_SHANK_fixed_joint_lump__RM_FOOT_visual_1'>
+        <pose>0 -0.35499 0 -3.14159 -0 -3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>file:///robot/urdf/elspider_mini/meshes/RM_FOOT.STL</uri>
+          </mesh>
+        </geometry>
+        <plugin name='drawForcePlugin' filename='libunitreeDrawForcePlugin.so'>
+          <topicName>RM_foot_contact</topicName>
+        </plugin>
+      </visual>
+      <sensor name='RM_foot_contact' type='contact'>
+        <update_rate>100</update_rate>
+        <plugin name='contactPlugin' filename='libunitreeFootContactPlugin.so'/>
+        <contact>
+          <collision>RM_foot_collision_collision</collision>
+          <topic>__default_topic__</topic>
+        </contact>
+        <alwaysOn>1</alwaysOn>
+      </sensor>
+    </link>
+    <static>0</static>
+    <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+      <robotNamespace>/elspider_mini</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </model>
+</sdf>

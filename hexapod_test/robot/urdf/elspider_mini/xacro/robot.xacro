@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<robot name="elspider_mini" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find robot)/urdf/elspider_mini/xacro/const.xacro"/>
+    <xacro:include filename="$(find robot)/urdf/elspider_mini/xacro/trunk.xacro"/>
+    <xacro:include filename="$(find robot)/urdf/elspider_mini/xacro/leg.xacro"/>
+    <xacro:include filename="$(find robot)/urdf/elspider_mini/xacro/gazebo.xacro"/>
+
+    <xacro:leg name="RF" mirror="1" >
+        <origin rpy="0 0 3.1416" xyz="0.42311 -0.2 0.003"/>
+    </xacro:leg>
+
+    <xacro:leg name="RM" mirror="1" >
+        <origin rpy="0 0 3.1416" xyz="0 -0.24 0.003"/>
+    </xacro:leg>
+
+    <xacro:leg name="RB" mirror="1" >
+        <origin rpy="0 0 3.1416" xyz="-0.42311 -0.2 0.003"/>
+    </xacro:leg>
+
+    <xacro:leg name="LF" mirror="-1" >
+        <origin rpy="3.1416 0 3.1416" xyz="0.42311 0.2 0.003"/>
+    </xacro:leg>
+
+    <xacro:leg name="LM" mirror="-1" >
+        <origin rpy="3.1416 0 3.1416" xyz="0 0.24 0.003"/>
+    </xacro:leg>
+
+    <xacro:leg name="LB" mirror="-1" >
+        <origin rpy="3.1416 0 3.1416" xyz="-0.42311 0.2 0.003"/>
+    </xacro:leg>
+
+</robot>
